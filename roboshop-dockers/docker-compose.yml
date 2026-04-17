@@ -1,8 +1,35 @@
 services:
+  catalogue:
+    build:
+      dockerfile: catalogue.Dockerfile
+    image: charan1325/catalogue:1.0.0
+    container_name: catalogue
+
+  user:
+    build:
+      dockerfile: user.Dockerfile
+    image: charan1325/user:1.0.0
+    container_name: user
+    depends_on:
+    - redis
+
+  frontend:
+    build: 
+      dockerfile: frontend.Dockerfile
+    image: charan1325/frontend:1.0.0
+    container_name: frontend
+    depends_on:
+    - catalogue
+    - user
+
   mongodb:
     build: ./mongodb # it moves to mongodb directory 
     image: charan1325/mongodb:1.0.0 #docker build -t charan1325mongodb:1.0.0
     container_name: mongodb
+
+  redis:
+    image: redis7.0
+    container_name: redis  
 
 
 networks:

@@ -1,7 +1,6 @@
 services:
   catalogue:
-    build:
-      dockerfile: catalogue.Dockerfile
+    build: ./catalogue
     image: charan1325/catalogue:1.0.0
     container_name: catalogue
 

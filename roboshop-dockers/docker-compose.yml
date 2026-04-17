@@ -6,8 +6,7 @@ services:
     container_name: catalogue
 
   user:
-    build:
-      dockerfile: user.Dockerfile
+    build: ./user
     image: charan1325/user:1.0.0
     container_name: user
     depends_on:

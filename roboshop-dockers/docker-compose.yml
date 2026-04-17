@@ -2,7 +2,7 @@ services:
   mongodb:
     build: ./mongodb # it moves to mongodb directory 
     image: charan1325/mongodb:1.0.0 #docker build -t charan1325mongodb:1.0.0
-    containername: mongodb
+    container_name: mongodb
 
 
 networks:

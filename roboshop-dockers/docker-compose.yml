@@ -13,8 +13,7 @@ services:
     - redis
 
   frontend:
-    build: 
-      dockerfile: frontend.Dockerfile
+    build: ./frontend
     image: charan1325/frontend:1.0.0
     container_name: frontend
     depends_on:
